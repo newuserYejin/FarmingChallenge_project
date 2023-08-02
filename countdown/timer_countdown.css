@@ -1,0 +1,83 @@
+.box{
+    border: solid 1px black;
+}
+
+.total_box{
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.inner_box{
+    width: 90%;
+}
+
+.display{
+    height: 20vh;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.display_inner_box{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.time{
+    border: solid black 1px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 5rem;
+    font-size: 4rem;
+    cursor: pointer;
+    caret-color:transparent; /*커서 깜박이 투명하게*/
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.gi{
+    border: solid 1px black;
+    font-size: 4rem;
+    height: 60%;
+    margin: 0;
+    padding: 0;
+}
+
+.display_inner_box p{
+    font-size: 5rem;
+    margin: 0;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.button{
+    width: 10%;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+

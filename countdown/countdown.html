@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count_Down</title>
+    <link href="/countdown/countdown.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="box total_box">
+        <div class="inner_box">
+            <div class="box display">
+                <div class="display_inner_box">
+                    <p class="time">00 : 00 : 00</p>
+                </div>
+            </div>
+            <div class="buttons">
+                <div class="box button" onclick="start()">START</div>
+                <div class="box button" onclick="stop()">STOP</div>
+                <div class="box button" onclick="reset()">RESET</div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let time_ID;
+        let Timer_run = false;
+
+        const time = document.querySelector(".time")
+        let realtime = 0;
+
+        function start() {
+            if (!Timer_run) {
+                time_ID = setInterval(updateTime, 1000);
+                Timer_run = true
+            }
+        }
+
+        function updateTime() {
+            realtime++;
+            const second = realtime % 60;
+            const minutes = Math.floor(realtime / 60) % 60;
+            const hour = Math.floor(realtime / 3600);
+            // const hour = 0;
+            // const minutes= 1;
+            // const second = 99;
+
+            time.innerText = `${two_num(hour)} : ${two_num(minutes)} : ${two_num(second)}`;
+            console.log(realtime);
+        }
+
+        function two_num(num) {
+            return num.toString().padStart(2, '0')
+        }
+
+        function stop() {
+            clearInterval(time_ID);
+            Timer_run = false
+        }
+
+        function reset(){
+            stop();
+            realtime = 0;
+            time.innerText = `00 : 00 : 00`;
+        }
+
+    </script>
+
+</body>
+
+</html>

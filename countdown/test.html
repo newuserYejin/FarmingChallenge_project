@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count_Up_Timer</title>
+</head>
+<body>
+    <div class="box total_box">
+        <div class="inner_box">
+            <div class="box display">
+                <div class="display_inner_box">
+                    <p class="time">00 : 00 : 00</p>               
+                </div>
+            </div>
+            <div class="buttons">
+                <div class="box button" onclick="start()">START</div>
+                <div class="box button" onclick="stop()">STOP</div>
+                <div class="box button" onclick="reset()">RESET</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let startTime;
+        let isTimerRunning = false;
+
+        const time = document.querySelector(".time");
+        let elapsedTime = 0;
+
+        function start() {
+            if (!isTimerRunning) {
+                startTime = Date.now() - elapsedTime;
+                isTimerRunning = true;
+                requestAnimationFrame(updateTime);
+            }
+        }
+
+        function updateTime() {
+            const currentTime = Date.now();
+            elapsedTime = currentTime - startTime;
+
+            const hours = Math.floor(elapsedTime / 3600000);
+            const minutes = Math.floor((elapsedTime % 3600000) / 60000);
+            const seconds = Math.floor((elapsedTime % 60000) / 1000);
+
+            time.innerText = `${twoDigit(hours)} : ${twoDigit(minutes)} : ${twoDigit(seconds)}`;
+
+            if (isTimerRunning) {
+                requestAnimationFrame(updateTime);
+            }
+        }
+
+        function stop() {
+            isTimerRunning = false;
+        }
+
+        function reset() {
+            stop();
+            elapsedTime = 0;
+            time.innerText = "00 : 00 : 00";
+        }
+
+        function twoDigit(num) {
+            return num.toString().padStart(2, '0');
+        }
+    </script>
+</body>
+</html>

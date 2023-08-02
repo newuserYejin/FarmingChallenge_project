@@ -180,7 +180,7 @@ ul{
 }
 
 .main_card_in{
-    border: solid 1px green;
+    border: solid 1px rgb(177, 177, 177);
     width: 100%;
     border-radius: 5px;
     cursor: pointer;

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="UTF-8">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer_CountDown</title>
+    <link href="/countdown/timer_countdown.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="box total_box">
+        <div class="inner_box">
+            <div class="box display">
+                <div class="box display_inner_box">
+                    <input class="time" type="number" value="00" id="hh" min="0">
+                    <div class="gi">:</div>
+                    <input class="time" type="number" value="00" id="mm" min="0">
+                    <div class="gi">:</div>
+                    <input class="time" type="number" value="00" id="ss" min="0"> 
+                </div>
+            </div>
+            <div class="buttons">
+                <div class="box button" onclick="start()">START</div>
+                <div class="box button" onclick="stop()">STOP</div>
+                <div class="box button" onclick="reset()">RESET</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let time_ID;
+        let Timer_run = false;
+
+        let h = document.getElementById("hh");
+        let m = document.getElementById("mm");
+        let s = document.getElementById("ss");
+
+        function start() {
+            if (!Timer_run) {
+                const hour = parseInt(document.getElementById("hh").value) || 0;
+                const min = parseInt(document.getElementById("mm").value) || 0;
+                const second = parseInt(document.getElementById("ss").value) || 0;
+
+                realtime = (hour * 3600 + min * 60 + second) * 1000;
+                Timer_run = true;
+                time_ID = setInterval(updateTime, 1000);
+            }
+        }
+
+        function updateTime() {
+            realtime -= 1000;
+
+            if (realtime <= 0) {
+                clearInterval(time_ID);
+                Timer_run = false;
+                realtime = 0;
+            }
+            const hour = Math.floor(realtime / 3600000);
+            const minutes = Math.floor((realtime % 3600000) / 60000);
+            const second = Math.floor((realtime % 60000) / 1000);
+
+            h.value = two_num(hour);
+            m.value = two_num(minutes);
+            s.value = two_num(second);
+        }
+
+        function two_num(num) {
+            return num.toString().padStart(2, '0');
+        }
+
+        function stop() {
+            clearInterval(time_ID);
+            Timer_run = false;
+        }
+
+        function reset() {
+            stop();
+            realtime = 0;
+            h.value = "00";
+            m.value = "00";
+            s.value = "00";
+        }
+    </script>
+</body>
+
+</html>
