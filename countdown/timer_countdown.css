@@ -31,10 +31,10 @@
 }
 
 .time{
-    border: solid black 1px;
+    border: none;
     display: inline-block;
     margin: 0;
-    padding: 0;
+    padding: 0 10px;
     width: 5rem;
     font-size: 4rem;
     cursor: pointer;
@@ -49,7 +49,6 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .gi{
-    border: solid 1px black;
     font-size: 4rem;
     height: 60%;
     margin: 0;
