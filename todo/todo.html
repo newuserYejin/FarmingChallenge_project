@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO_DO_List</title>
+    <link href="./todo.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="box all">
+        <div class="inner_box">
+            <div class="title">TO-DO LIST</div>
+
+            <div class="orderby_buttons">
+                <div class="box button_state" id="all">전체</div>
+                <div class="box button_state" id="done">완료</div>
+                <div class="box button_state" id="notdone">미완료</div>
+            </div>
+
+            <div class="input_box">
+                <input placeholder="할일을 작성해 주세요" id="inner" />
+                <div class="level_buttons">
+                    <div class="box level_button" id="low">낮음</div>
+                    <div class="box level_button" id="middle">보통</div>
+                    <div class="box level_button" id="high">높음</div>
+                    <div class="box level_button" id="very_high">아주 높음</div>
+                    <button class="box" id="add">추가</button>
+                </div>
+            </div>
+
+            <div class="box list_box" id="list_box">
+                <div class="box content">
+                    <input type="checkbox" />
+                    <div>할 일을 작성한 내용이 보입니다.</div>
+                    <div class="box task_level">낮음</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./todo.js"></script>
+</body>
+
+</html>
