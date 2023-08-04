@@ -90,13 +90,13 @@ function Filtering(){
     if (allButton.classList.contains('selected')) {
         // '전체' 버튼을 클릭한 경우
         allItems.forEach(item => {
-          item.style.opacity = 1;
+          item.style.opacity = 1;         //나타내기
           item.style.pointerEvents = 'auto';
         });
       } else if (doneButton.classList.contains('selected')) {
         // '완료' 버튼을 클릭한 경우
         allItems.forEach(item => {
-          item.style.opacity = 0;
+          item.style.opacity = 0;         //가리기
           item.style.pointerEvents = 'none';
         });
         doneItems.forEach(item => {
@@ -110,7 +110,7 @@ function Filtering(){
           item.style.pointerEvents = 'none';
         });
         notDoneItems.forEach(item => {
-          item.parentNode.style.opacity = 1;
+          item.parentNode.style.opacity = 1;    //parentNode를 불러오므로써 input태그를 포함하고 있는 부모 요소에게 적용시킨다.
           item.parentNode.style.pointerEvents = 'auto';
         });
       }
@@ -131,6 +131,6 @@ orderby_Buttons.forEach(button => {
     });
   });
 
-  allButton.classList.add('selected');
+  allButton.classList.add('selected');    //초기는 전체 보이기로 설정
 
 

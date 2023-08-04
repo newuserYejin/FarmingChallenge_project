@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calender</title>
+    <link href="./calender.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="box all">
+        <div class="calender_title">
+            <div class="calender_title_box">
+                <button id="pass" onclick="decreaseM()"> ◀ </button>
+                    <div id="year">2023</div>년
+                    &nbsp;
+                    <div id="month">8</div>월
+                <button id="next" onclick="increaseM()">▶</button>
+            </div>
+        </div>
+        <div class="calender_box">
+            <table class="calender_week">
+                <tr id="week">
+                    <th>일</th>
+                    <th>월</th>
+                    <th>화</th>
+                    <th>수</th>
+                    <th>목</th>
+                    <th>금</th>
+                    <th>토</th>
+                </tr>
+            </table>
+            <table class="calender">
+            </table>
+        </div>
+
+    </div>
+
+    <div class="modal" id="memoModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <div class="box i_memo">
+                <div class="i_memo_date" id="modalDate"></div>
+                <div class="i_memo_content_box">
+                    <div class="i_memo_input_box">
+                        <input placeholder="메모를 입력하세요" class="i_memo_input" id="inner"></input>
+                        <button class="add_memo" id="add">추가</button>
+                    </div>
+                    <div class="i_memo_content" id="modalContent">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="box i_memo">
+        <div class="i_memo_date">8월 일요일</div>
+        <div class="i_memo_content_box">
+            <div class="i_memo_input_box">
+                <input placeholder="메모를 입력하세요" class="i_memo_input" id="inner"></input>
+                <button class="add_memo" id="add">추가</button>
+            </div>
+            <div class="i_memo_content" id="i_memo_content">
+                <div class="real_memo_box">
+                    <div class="real_memo">내용</div>
+                    <button id="remove">삭제</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    
+    <script src="./calender.js"></script>
+</body>
+
+</html>
