@@ -22,7 +22,7 @@
     height: 100%;
     display: flex;
     width: 400%;
-    transition: all 0.3s;
+    transition: all 0.5s;
 }
 
 .img_box{
@@ -38,6 +38,10 @@
 }
 
 /*좌우 버튼*/
+
+.controls{
+    cursor: pointer;
+}
 
 .controls .arrow {
     position: absolute;
