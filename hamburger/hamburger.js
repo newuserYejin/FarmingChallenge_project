@@ -1,10 +1,7 @@
-const nav_menu = document.querySelector(".nav_menu");
-const hamburger_button = document.querySelector('.hamburger_logo');
+const side_bar = document.querySelector(".side_bar");
 
-hamburger_button.addEventListener('click',function(){
-    nav_menu.classList.toggle('show');
-})
+function show(){
+    side_bar.classList.toggle('show');
 
-
-
+}
 

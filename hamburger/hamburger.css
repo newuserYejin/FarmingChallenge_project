@@ -53,14 +53,39 @@ nav {
         align-self: start;
     }
 
-    .nav_menu {
+    .side_bar{
+        background-color:navy;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        margin-top: 8px;
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        width: 200px;
+        height: 100%;
+        
         display: none;
     }
 
+    .login_box{
+        color: white;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .login_box input{
+        width: 100px;
+    }
+
+    .nav_menu {
+        display: flex;
+        flex-direction: column;
+    }
     .nav_menu li{
         margin-bottom: 15px;
         cursor: pointer;
@@ -70,7 +95,7 @@ nav {
         display: flex;
     }
 
-    .nav_menu.show{
+    .side_bar.show{
         display: flex;
     }
 }
