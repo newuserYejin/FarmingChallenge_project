@@ -1,0 +1,61 @@
+.all{
+    border: solid 3px black;
+    border-radius: 30px;
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.all div:not(:last-child){
+    margin-bottom: 10px;
+}
+
+.id_box{
+    font-weight: bold;
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pw_box{
+    font-weight: bold;
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input{
+    width: 100px;
+    height: 20px;
+}
+
+.id_box div{
+    width: 100px;
+}
+
+.pw_box div{
+    width: 100px;
+}
+
+.login_button{
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
